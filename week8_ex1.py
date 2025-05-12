@@ -8,7 +8,7 @@ def main():
 
     for chunk in pd.read_csv(path, chunksize=chunksize):
         # Use actual parameterId value for precipitation
-        precip = chunk[chunk['parameterId'] == 'precip_past10min']
+        precip = chunk[chunk['parameterId'] == 'precip_past1h']
         total += precip['value'].sum()
 
     print(total)
